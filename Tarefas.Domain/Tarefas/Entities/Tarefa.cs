@@ -95,6 +95,9 @@ public sealed class Tarefa : AggregateRoot
 
     public void Cancelar()
     {
+        if (Status == StatusTarefa.Cancelada)
+            return;
+
         Guard.Against<DomainException>(
             Status == StatusTarefa.Concluida,
             "A tarefa não pode ser cancelada pois está concluída.");
