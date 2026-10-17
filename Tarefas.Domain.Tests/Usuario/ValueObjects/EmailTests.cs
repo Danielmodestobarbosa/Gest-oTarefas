@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Tarefas.Domain.Tarefas.Entities
+namespace Tarefas.Domain.Tests.Usuário.ValueObjects
 {
-    internal class Usuários
+    internal class EmailTests
     {
     }
 }

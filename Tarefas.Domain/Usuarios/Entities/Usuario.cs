@@ -16,8 +16,6 @@ public sealed class Usuario : AggregateRoot
     public NomeUsuario Nome { get; private set; }
     public Email Email { get; private set; }
     public StatusUsuario Status { get; private set; }
-    public DateTime DataCriacao { get; private set; }
-    public DateTime DataAtualizacao { get; private set; }
 
     public Usuario(
         NomeUsuario nome,
@@ -41,7 +39,7 @@ public sealed class Usuario : AggregateRoot
     {
         Guard.Against<DomainException>(
             Status == StatusUsuario.Inativo,
-            "Usuários invativos não podem ter o perfil atualizado");
+            "Usuários inativos não podem ter o perfil atualizado");
 
         Validar(nome, email);
 
